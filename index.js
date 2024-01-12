@@ -35,6 +35,6 @@ app.use("/auth", authRoute);
 app.use("/user", userRouter);
 app.use("/curr", currRouter);
 
-app.listen(9002, () => {
-  console.log("Server running on port 9002");
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
 });
