@@ -25,14 +25,16 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://spotify-player-g24.vercel.app",
+    // successRedirect: "http://spotify-player-g24.vercel.app",
+    successRedirect: "http://localhost:3000",
     failureRedirect: "/login/failed",
   })
 );
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("http://spotify-player-g24.vercel.app");
+  // res.redirect("http://spotify-player-g24.vercel.app");
+  res.redirect("http://localhost:3000");
 });
 
 module.exports = router;
