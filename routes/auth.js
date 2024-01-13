@@ -25,14 +25,14 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://spotify-player-g24.vercel.app",
+    successRedirect: "http://spotify-player-g24.vercel.app",
     failureRedirect: "/login/failed",
   })
 );
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("https://spotify-player-g24.vercel.app");
+  res.redirect("http://spotify-player-g24.vercel.app");
 });
 
 module.exports = router;
