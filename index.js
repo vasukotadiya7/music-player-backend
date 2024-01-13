@@ -25,7 +25,7 @@ app.use(passport.session());
 
 app.use(
   cors({
-    origin: "https://spotify-player-g24.vercel.app",
+    origin: "http://spotify-player-g24.vercel.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
