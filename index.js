@@ -22,18 +22,23 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+const whitelist = [
+  "https://tuneify-g19.vercel.app",
+  "http://localhost:3000",
+  "http://tuneify.cyclic.app",
+  "https://tuneify.cyclic.app",
+];
 app.use(
-  // cors({
-  //   origin: "https://tuneify-g19.vercel.app",
-  //   // origin: "http://localhost:3000",
-  //   methods: "GET,POST,PUT,DELETE",
-  //   credentials: true,
-  // })
   cors({
-    origin:"*",
-      methods: "GET,POST,PUT,DELETE",
+    origin: whitelist,
+    // origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
   })
+  // cors({
+  //   origin:"*",
+  //     methods: "GET,POST,PUT,DELETE",
+  // })
 );
 connDB();
 app.use("/auth", authRoute);
